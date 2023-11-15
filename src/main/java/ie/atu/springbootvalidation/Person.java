@@ -1,6 +1,7 @@
 package ie.atu.springbootvalidation;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import jakarta.validation.constraints.Email;
 import lombok.Data;
@@ -17,11 +18,11 @@ public class Person {
     @Size(min =3, max = 10, message ="EmployeeId must be between 2 and 10 numbers")
     private String employeeId;
 
+    @NotNull(message="Age cannot be null")
+    private int age;
+
     @Email(message = "Invalid email address")
     private String email;
-
-
-
 
 
 }
